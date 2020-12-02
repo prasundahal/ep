@@ -29,14 +29,14 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-table"></i>
                         <p>
-                            Cards & Widgets
+                            Sliders
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{ url('/sliders') }}" class="nav-link">
-                                <i class="far nav-icon" aria-hidden="true"></i>
+                                <i class="fas fa-sliders-h" aria-hidden="true"></i>
                                 <p>Sliders</p>
                             </a>
                         </li>
@@ -72,16 +72,16 @@
 
                 <li class="nav-item has-treeview menu-close">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <i class="far fa-images"></i>
                         <p>
-                            Galery First
-                            <i class="right fas fa-angle-left"></i>
+                            Gallery First
+
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{ url('/viewprojects') }}" class="nav-link">
-                                <i class="far nav-icon"></i>
+                                <i class="far fa-images"></i>
                                 <p>View All</p>
                             </a>
                         </li>
@@ -96,10 +96,10 @@
 
                 <li class="nav-item has-treeview menu-close">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-male"></i>
+                        <i class="far fa-images"></i>
                         <p>
-                            Galery Second
-                            <i class="right fas fa-angle-left"></i>
+                            Gallery Second
+
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
@@ -120,10 +120,10 @@
 
                 <li class="nav-item has-treeview menu-close">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-handshake"></i>
+                        <i class="fas fa-image"></i>
                         <p>
-                           Galery 3
-                            <i class="right fas fa-angle-left"></i>
+                            Gallery 3
+
                         </p>
                     </a>
                     <ul class="nav nav-treeview">

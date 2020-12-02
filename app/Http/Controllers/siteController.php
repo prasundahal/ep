@@ -5,15 +5,19 @@ namespace App\Http\Controllers;
 use App\Models\member;
 use App\Models\Project;
 use App\Models\slider;
+use App\Models\Partner;
 use Illuminate\Http\Request;
 
 class siteController extends Controller
 {
     public function index(){
-        $members=member::all();
-        $sliders=slider::all();
         $projects=Project::all();
-        return view('index',compact('members','sliders','projects'));
+
+        $members=member::all();
+        $partners=Partner::all();
+        $sliders=slider::all();
+
+        return view('index',compact('members','sliders','projects','partners'));
     }
 
     public function contact(){

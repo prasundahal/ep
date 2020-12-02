@@ -77,15 +77,17 @@
   });
 </script>
 <script type="text/javascript">
-  var images = ["event-private.jpg", "events-bg.jpg"];
+  var images = @json($sliders) ;
+    console.log('asdasd', images)
+//   var images = ["event-private.jpg", "events-bg.jpg"];
   var i = 0;
-  $("#hero").css("background-image", "url(assets/img/" + images[i] + ")");
+  $("#hero").css("background-image", "url(/sliderImages/" + images[i].image + ")");
   setInterval(function () {
     i++;
     if (i == images.length) {
       i = 0;
     }
-    $("#hero").css({ "background-image": "url(assets/img/" + images[i] + ")", "transition": "background 2s linear" });
+    $("#hero").css({ "background-image": "url(/sliderImages/" + images[i].image + ")", "transition": "background 2s linear" });
     //$("#hero").fadeOut("slow", function () {
     //$("#hero").fadeIn("slow");
     // });

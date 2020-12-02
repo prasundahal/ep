@@ -32,7 +32,7 @@ Route::get('/about', 'App\Http\Controllers\siteController@about')->name('about')
 
 Route::get('/projects', 'App\Http\Controllers\siteController@project')->name('project');
 
-Route::post('/message/create','App\Http\Controllers\MessageController@store');
+Route::post('/message/create','App\Http\Controllers\MessageController@store')->name('text');
 
 Route::get('/portfolio', 'App\Http\Controllers\siteController@portfolio')->name('portfolio');
 

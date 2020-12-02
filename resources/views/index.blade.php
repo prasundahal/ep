@@ -10,7 +10,7 @@
     <div class="container position-relative text-center text-lg-left" data-aos="zoom-in" data-aos-delay="100">
       <div class="row">
         <div class="col-lg-8">
-          <h1>Welcome to <span>Restaurantly</span></h1>
+          <h1>Welcome to <span>{{ config('app.name', 'Laravel') }}</span></h1>
           <h2>Delivering great food for more than 18 years!</h2>
 
           <div class="btns">
@@ -18,18 +18,48 @@
             <a href="#book-a-table" class="btn-book animated fadeInUp scrollto">Book a Table</a>
           </div>
         </div>
-        <div class="col-lg-4 d-flex align-items-center justify-content-center" data-aos="zoom-in" data-aos-delay="200">
+        {{-- <div class="col-lg-4 d-flex align-items-center justify-content-center" data-aos="zoom-in" data-aos-delay="200">
           <a href="https://www.youtube.com/watch?v=GlrxcuEDyF8" class="venobox play-btn" data-vbtype="video"
             data-autoplay="true"></a>
-        </div>
+        </div> --}}
 
       </div>
     </div>
-  </section>
+</section>
 
 
   <!-- ======= Main Section ======= -->
   <main id="main">
+    <!-- Gallery 1 -->
+    <section id="gallery1" class="gallery1">
+        <div class="px-5" data-aos="fade-up">
+          <div class="container" data-aos="fade-up">
+            <div class="section-title">
+              <h2>Gallery 1</h2>
+              <p>Some photos from Our Restaurant</p>
+            </div>
+          </div>
+
+          <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row no-gutters row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5">
+
+                @foreach($projects as $project)
+                <div class="col">
+                  <div class="gallery-item">
+                      <a href="/gal1/{{ $project->image }}" class="venobox" data-gall="gallery-item">
+                          <img src="/gal1/{{ $project->image }}" alt="" class="cover-image">
+                        </a>
+                  </div>
+                </div>
+                @endforeach
+
+            </div>
+          </div>
+        </div>
+      </section>
+    <!-- End Gallery 1 -->
+
 
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
@@ -45,13 +75,13 @@
                 </ol>
                 <div class="carousel-inner">
                   <div class="carousel-item active" data-interval="3000">
-                    <img class="d-block w-100" src="assets/img/about.jpg" alt="First slide">
+                    <img class="d-block w-100" src="assets/img/main.jpg" alt="First slide">
                   </div>
                   <div class="carousel-item" data-interval="3000">
-                    <img class="d-block w-100" src="assets/img/about.jpg" alt="Second slide">
+                    <img class="d-block w-100" src="assets/img/g2.jpg" alt="Second slide">
                   </div>
                   <div class="carousel-item" data-interval="3000">
-                    <img class="d-block w-100" src="assets/img/about.jpg" alt="Third slide">
+                    <img class="d-block w-100" src="assets/img/g3.jpg" alt="Third slide">
                   </div>
                 </div>
                 <!-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -67,25 +97,23 @@
             </div>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+            <h3>About Us</h3>
             <p class="font-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore
-              magna aliqua.
+                Earrings Plaza has been serving NYC for over 25 years. "EP", as our regulars call us, is a retail and wholesale fashion jewelry store with a huge selection of the hottest trends and classic staples in Fashion Jewelry and Accessories. At EP you will find beautiful jewelry and accessories at a fraction of the price that you would pay at a department store or local boutique! We can't wait to see you in store soon!
             </p>
-            <ul>
+            {{-- <ul>
               <li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
               <li><i class="icofont-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
               <li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
                 aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla
                 pariatur.</li>
-            </ul>
-            <p>
+            </ul> --}}
+            {{-- <p>
               Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
               voluptate
               velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
               culpa qui officia deserunt mollit anim id est laborum
-            </p>
+            </p> --}}
           </div>
         </div>
       </div>
@@ -138,44 +166,45 @@
           <h2>Testimonials</h2>
           <p>What they're saying about us</p>
         </div>
-        <div class="row">
-          <div class="col-lg-10 col-md-12 m-auto">
-            <div class="testimonial-item">
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium
-                quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-              <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-              <h3>Saul Goodman</h3>
-              <h4>Ceo &amp; Founder</h4>
+        <div class="row mt-5">
+            <div class="col-lg-12 text-center" data-aos="zoom-in" data-aos-delay="100">
+              <div class="testimonial-item">
+                {{-- <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis
+                  quorum velit fore eram velit sunt aliqua noster fugiat irure amet
+                  <!-- legam anim culpa. -->
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p> --}}
+                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                <h3>Saul Goodman</h3>
+                <h4>Ceo &amp; Founder</h4>
+              </div>
             </div>
           </div>
-        </div>
         <div class="row">
-          <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-lg-6 text-center" data-aos="zoom-in" data-aos-delay="100">
             <div class="testimonial-item">
-              <p>
+              {{-- <p>
                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                 Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis
                 quorum velit fore eram velit sunt aliqua noster fugiat irure amet
                 <!-- legam anim culpa. -->
                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
+              </p> --}}
               <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
               <h3>Sara Wilsson</h3>
               <h4>Designer</h4>
             </div>
           </div>
-          <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-lg-6 text-center" data-aos="zoom-in" data-aos-delay="100">
             <div class="testimonial-item">
-              <p>
+              {{-- <p>
                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                 Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor
                 labore quem eram duis noster aute amet eram fore quis sint minim.
                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
+              </p> --}}
               <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
               <h3>Jena Karlis</h3>
               <h4>Store Owner</h4>
@@ -342,126 +371,35 @@
     <!-- End Menu Section -->
 
 
-    <!-- Gallery 1 -->
-    <section id="gallery1" class="gallery1">
+    <!-- Gallery 2 -->
+    <section id="gallery2" class="gallery2">
       <div class="px-5" data-aos="fade-up">
         <div class="container" data-aos="fade-up">
           <div class="section-title">
-            <h2>Gallery</h2>
+            <h2>Gallery 2</h2>
             <p>Some photos from Our Restaurant</p>
           </div>
         </div>
-        @foreach($projects as $project)
         <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
 
-          <div class="row no-gutters row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5">
-
-            <div class="col">
-
-              <div class="gallery-item">
-
-                <a href="assets/img/gallery/gallery-1.jpg" class="venobox" data-gall="gallery-item">
-                  <img src="/gal1/{{ $project->image }}" alt="" class="img-fluid">
-                </a>
-
+            <div class="row no-gutters row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5">
+            @foreach($members as $project)
+              <div class="col">
+                <div class="gallery-item">
+                    <a href="/gal1/{{ $project->image }}" class="venobox" data-gall="gallery-item">
+                        <img src="/gal1/{{ $project->image }}" alt="" class="cover-image">
+                      </a>
+                </div>
               </div>
+              @endforeach
 
             </div>
-{{--
-            <div class="col">
-              <div class="gallery-item">
-                <a href="assets/img/gallery/gallery-2.jpg" class="venobox" data-gall="gallery-item">
-                  <img src="assets/img/gallery/gallery-2.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="gallery-item">
-                <a href="assets/img/gallery/gallery-3.jpg" class="venobox" data-gall="gallery-item">
-                  <img src="assets/img/gallery/gallery-3.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="gallery-item">
-                <a href="assets/img/gallery/gallery-4.jpg" class="venobox" data-gall="gallery-item">
-                  <img src="assets/img/gallery/gallery-4.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="gallery-item">
-                <a href="assets/img/gallery/gallery-5.jpg" class="venobox" data-gall="gallery-item">
-                  <img src="assets/img/gallery/gallery-5.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="gallery-item">
-                <a href="assets/img/gallery/gallery-6.jpg" class="venobox" data-gall="gallery-item">
-                  <img src="assets/img/gallery/gallery-6.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="gallery-item">
-                <a href="assets/img/gallery/gallery-7.jpg" class="venobox" data-gall="gallery-item">
-                  <img src="assets/img/gallery/gallery-7.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="gallery-item">
-                <a href="assets/img/gallery/gallery-8.jpg" class="venobox" data-gall="gallery-item">
-                  <img src="assets/img/gallery/gallery-8.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="gallery-item">
-                <a href="assets/img/gallery/gallery-1.jpg" class="venobox" data-gall="gallery-item">
-                  <img src="assets/img/gallery/gallery-1.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="gallery-item">
-                <a href="assets/img/gallery/gallery-2.jpg" class="venobox" data-gall="gallery-item">
-                  <img src="assets/img/gallery/gallery-2.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="gallery-item">
-                <a href="assets/img/gallery/gallery-3.jpg" class="venobox" data-gall="gallery-item">
-                  <img src="assets/img/gallery/gallery-3.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="gallery-item">
-                <a href="assets/img/gallery/gallery-4.jpg" class="venobox" data-gall="gallery-item">
-                  <img src="assets/img/gallery/gallery-4.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-            </div> --}}
-
           </div>
-        </div>
-        @endforeach
+
       </div>
     </section>
-    <!-- End Gallery 1 -->
+    <!-- End Gallery 2 -->
+
     <!-- ======= Specials Section ======= -->
     <section id="specials" class="specials">
       <div class="container" data-aos="fade-up">
@@ -891,12 +829,12 @@
     </section> -->
     <!-- End Gallery Section -->
 
-    <!-- ======= Gallery2 ======= -->
-    <section id="gallery2" class="gallery2">
-      <div class="py-5" data-aos="fade-up">
+    <!-- ======= Gallery3 ======= -->
+    <section id="gallery3" class="gallery3">
+      <div class="px-5" data-aos="fade-up">
         <div class="container" data-aos="fade-up">
           <div class="section-title">
-            <h2>Gallery</h2>
+            <h2>Gallery 3</h2>
             <p>Some photos from Our Restaurant</p>
           </div>
         </div>
@@ -904,111 +842,24 @@
         <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
 
           <div class="row no-gutters row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5">
-
+            @foreach($partners as $project)
             <div class="col">
               <div class="gallery-item">
-                <a href="assets/img/gallery/gallery-1.jpg" class="venobox" data-gall="gallery-item">
-                  <img src="assets/img/gallery/gallery-1.jpg" alt="" class="img-fluid">
-                </a>
+                  <a href="/gal1/{{ $project->image }}" class="venobox" data-gall="gallery-item">
+                      <img src="/gal1/{{ $project->image }}" alt="" class="cover-image">
+                    </a>
               </div>
             </div>
-
-            <div class="col">
-              <div class="gallery-item">
-                <a href="assets/img/gallery/gallery-2.jpg" class="venobox" data-gall="gallery-item">
-                  <img src="assets/img/gallery/gallery-2.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="gallery-item">
-                <a href="assets/img/gallery/gallery-3.jpg" class="venobox" data-gall="gallery-item">
-                  <img src="assets/img/gallery/gallery-3.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="gallery-item">
-                <a href="assets/img/gallery/gallery-4.jpg" class="venobox" data-gall="gallery-item">
-                  <img src="assets/img/gallery/gallery-4.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="gallery-item">
-                <a href="assets/img/gallery/gallery-5.jpg" class="venobox" data-gall="gallery-item">
-                  <img src="assets/img/gallery/gallery-5.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="gallery-item">
-                <a href="assets/img/gallery/gallery-6.jpg" class="venobox" data-gall="gallery-item">
-                  <img src="assets/img/gallery/gallery-6.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="gallery-item">
-                <a href="assets/img/gallery/gallery-7.jpg" class="venobox" data-gall="gallery-item">
-                  <img src="assets/img/gallery/gallery-7.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="gallery-item">
-                <a href="assets/img/gallery/gallery-8.jpg" class="venobox" data-gall="gallery-item">
-                  <img src="assets/img/gallery/gallery-8.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="gallery-item">
-                <a href="assets/img/gallery/gallery-1.jpg" class="venobox" data-gall="gallery-item">
-                  <img src="assets/img/gallery/gallery-1.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="gallery-item">
-                <a href="assets/img/gallery/gallery-2.jpg" class="venobox" data-gall="gallery-item">
-                  <img src="assets/img/gallery/gallery-2.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="gallery-item">
-                <a href="assets/img/gallery/gallery-3.jpg" class="venobox" data-gall="gallery-item">
-                  <img src="assets/img/gallery/gallery-3.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="gallery-item">
-                <a href="assets/img/gallery/gallery-4.jpg" class="venobox" data-gall="gallery-item">
-                  <img src="assets/img/gallery/gallery-4.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-            </div>
+            @endforeach
 
           </div>
         </div>
       </div>
     </section>
-    <!-- End Gallery 2 -->
+    <!-- End Gallery 3 -->
 
     <!-- ======= Chefs Section ======= -->
-    <section id="chefs" class="chefs">
+    {{-- <section id="chefs" class="chefs">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -1075,7 +926,8 @@
         </div>
 
       </div>
-    </section><!-- End Chefs Section -->
+    </section> --}}
+    <!-- End Chefs Section -->
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
@@ -1132,8 +984,24 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="form-row">
+            {{-- <form action="{{ route('text') }}" method="post"  class="php-email-form">
+                @csrf --}}
+
+                <form action="{{ route('text') }}" method="POST" class="php-email-form" id="contact" enctype="multipart/form-data">
+                    @csrf
+                    <div id="success">
+                        @if ($errors->any())
+                <div class="alert alert-danger">
+                    <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
+                    </div>
+                <div class="form-row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
                     data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
